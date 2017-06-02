@@ -1,0 +1,8 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// our styles
+@import "_style.sass";
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
