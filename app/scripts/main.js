@@ -94,7 +94,9 @@ $.getJSON("scripts/product.json", function(res) {
     }
   })
   openDesc();
+  pagination();
   $('.product').css('opacity', '1');
+  $('.product_container').css('left', '0%');
 })
 
 if (user) {

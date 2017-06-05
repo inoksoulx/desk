@@ -22,4 +22,30 @@ $('#close_popup_up').on('click', function() {
   $('.pop_up_sign-up').removeClass('active');
 })
 
+var pages = $('.pagination li');
+
+pages.bind('click', function(event){
+  event.preventDefault();
+  var listItems = $('.page').length;
+  switch (this.className) {
+    case 'prev':
+      if (Math.round(parseFloat($('.product_container').get(0).style.left)) !== 0) {
+        $('.product_container').animate({
+          left: '+=100%'
+        }, 1000);
+      }
+      return;
+      break;
+    case 'next':
+      if (Math.round(parseFloat($('.product_container').get(0).style.left)) !== Math.round((listItems - 1) * 100 * -1)) {
+        $('.product_container').animate({
+          left: '-=100%'
+        }, 1000)
+      }
+      break;
+    default:
+
+  }
+})
+
 });

@@ -5,12 +5,8 @@ var category = $('.category');
 
 category.on('click', function(event) {
 
-
-
-
-
-
   var type = event.target.innerHTML.toString().toLowerCase();
+
   $.getJSON("scripts/product.json", function(res) {
     var container = $('.work-belt'),
         item = res.items,
@@ -33,6 +29,12 @@ category.on('click', function(event) {
     if ($('.product_container').children().length > 1) {
       $('.work-belt ~').remove();
     }
+
+    if ($('.page')){
+      $('.page').remove();
+    }
+
+    $('.product_container').css('left', '0')
 
     item.forEach(function(i) {
       var imgSrc = i.img,
@@ -100,5 +102,4 @@ category.on('click', function(event) {
     openDesc();
 
   })
-
 })
