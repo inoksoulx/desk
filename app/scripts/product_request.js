@@ -5,8 +5,12 @@ var category = $('.category');
 
 category.on('click', function(event) {
 
-  var type = event.target.innerHTML.toString().toLowerCase();
 
+
+
+
+
+  var type = event.target.innerHTML.toString().toLowerCase();
   $.getJSON("scripts/product.json", function(res) {
     var container = $('.work-belt'),
         item = res.items,
@@ -20,9 +24,15 @@ category.on('click', function(event) {
         iEdit,
         iTrash,
         divInfo,
-        divDesc;
+        divDesc,
+        itemsNum = [];
 
-    container.find('div.product').remove();
+    $('div.product').remove();
+
+
+    if ($('.product_container').children().length > 1) {
+      $('.work-belt ~').remove();
+    }
 
     item.forEach(function(i) {
       var imgSrc = i.img,
@@ -74,19 +84,21 @@ category.on('click', function(event) {
       divDesc.append(spanDes, spanAuthor);
 
       if (moderated === 'true' && typeProd === type) {
-        if( user === who ){
-          div.append(img, divInfo, divDesc, divI);
-          container.append(div);
-        } else {
-          console.log();
-          div.append(img, divInfo, divDesc);
-          container[0].append(div);
-        }
+        itemsNum.push(div);
+          if( user === who ){
+            div.append(img, divInfo, divDesc, divI);
+            container.append(div);
+          } else {
+            div.append(img, divInfo, divDesc);
+            container.append(div);
+          }
       }
     })
 
-    openDesc();
     fadeProd();
+    pagination();
+    openDesc();
 
   })
+
 })
