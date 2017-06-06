@@ -7,7 +7,8 @@
      "author": "adam@gmail.com",
      "price": "20 000",
      "moderated": "true",
-     "type": "cars"
+     "type": "cars",
+     "token": "Date.now()"
     },
     {
      "img": "https://c1.staticflickr.com/4/3938/15400755749_7428679baf.jpg",
@@ -25,7 +26,8 @@
      "author": "adam@gmail.com",
      "price": "20 000",
      "moderated": "true",
-     "type": "cars"
+     "type": "cars",
+     "token": "Date.now()"
     },
     {
      "img": "https://c1.staticflickr.com/4/3938/15400755749_7428679baf.jpg",

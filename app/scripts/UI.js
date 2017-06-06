@@ -1,7 +1,9 @@
 var pages = $('.pagination');
 var currentPage = 1;
 
-pages.click(function(event){
+var flag = false;
+
+pages.on('click', function(event){
 
   var a = $('.page > a');
   var target = event.target;
@@ -11,9 +13,13 @@ pages.click(function(event){
 
     case 'prev':
       if (Math.round(parseFloat($('.product_container').get(0).style.left)) !== 0) {
+        if( flag ) return false;
+        flag = true;
         $('.product_container').animate({
           left: '+=100%',
-        }, 700);
+        }, 500, function(){
+          flag = false;
+        });
       };
       if (currentPage !== 1) {
         currentPage -= 1;
@@ -23,9 +29,13 @@ pages.click(function(event){
 
     case 'next':
       if (Math.round(parseFloat($('.product_container').get(0).style.left)) !== Math.round((listItems - 1) * 100 * -1)) {
+        if( flag ) return false;
+        flag = true;
         $('.product_container').animate({
           left: '-=100%'
-        }, 700);
+        }, 700, function(){
+          flag = false;
+        });
       }
       if (currentPage !== listItems) {
         currentPage += 1;

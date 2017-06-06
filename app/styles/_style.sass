@@ -161,11 +161,13 @@ body
 .wrapper
   header
     font-family: 'Catamaran', sans-serif
-    position: relative
+    position: fixed
     width: 100%
     height: 50px
     border-bottom: 1px solid black
     background: rgba(0, 0, 0, 0.9)
+    top: 0
+    z-index: 2
 
     .login
       float: right
@@ -277,7 +279,7 @@ body
     nav
       font-family: 'Catamaran', sans-serif
       display: flex
-      margin-top: 30px
+      margin-top: 70px
       align-items: center
       justify-content: center
 
@@ -395,7 +397,9 @@ body
         transition: 0.3s all
 
   section
+    margin-top: -30px
     position: relative
+    font-family: 'Catamaran', sans-serif
     @include clearfix
 
     .work-belt

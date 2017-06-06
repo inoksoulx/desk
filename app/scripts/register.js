@@ -1,6 +1,3 @@
-'use strict';
-
-
 if (!localStorage.database) {
   base.defaultUsers();
 }

@@ -1,5 +1,3 @@
-'use strict';
-
 var category = $('.category');
 
 
@@ -42,10 +40,13 @@ category.on('click', function(event) {
           who = i.author,
           price = i.price,
           moderated = i.moderated,
-          typeProd = i.type;
+          typeProd = i.type,
+          token = i.token;
 
+      console.log(eval(token));
       div = document.createElement('div');
       div.classList.add('product');
+      div.setAttribute('data', Date.now());
 
       divInfo = document.createElement('div');
       divInfo.classList.add('product_info');
