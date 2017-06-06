@@ -25,7 +25,6 @@ category.on('click', function(event) {
 
     $('div.product').remove();
 
-
     if ($('.product_container').children().length > 1) {
       $('.work-belt ~').remove();
     }

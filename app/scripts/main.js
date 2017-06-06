@@ -97,7 +97,11 @@ $.getJSON("scripts/product.json", function(res) {
   pagination();
   $('.product').css('opacity', '1');
   $('.product_container').css('left', '0%');
+  $('.page > a').eq(0).addClass('active');
+
 })
+
+
 
 if (user) {
 

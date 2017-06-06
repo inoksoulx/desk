@@ -27,7 +27,6 @@ function pagination() {
       var a = document.createElement('a');
 
       a.innerHTML = i + 1;
-      a.href = '#';
 
       li.append(a);
 
@@ -52,5 +51,17 @@ function pagination() {
 
     $('.product_container').css('width', width * 100 + '%');
     $('.work-belt').css('width', 100 / width + '%');
+
+    $('.pagination').addClass('active');
+
+
+
+  } else {
+    $('.pagination').removeClass('active');
   }
+
+  $('.page > a').eq(0).addClass('active');
+
+  currentPage = 1;
+
 }

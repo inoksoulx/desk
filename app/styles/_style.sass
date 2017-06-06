@@ -12,6 +12,7 @@
 body
   margin: 0
   padding: 0
+  overflow-x: hidden
 
 .pop_up_sign-in
   width: 100%
@@ -394,21 +395,15 @@ body
         transition: 0.3s all
 
   section
-    width: 400%
-    border: 1px solid black
     position: relative
-    // left: -100%
     @include clearfix
 
-
     .work-belt
-      width: 25.0%
       display: flex
       flex-wrap: wrap
       justify-content: center
       float: left
-      border: 1px solid red
-
+      position: relative
 
     .product
       width: 550px
@@ -494,6 +489,8 @@ body
         justify-content: space-between
         position: absolute
         top: 400px
+        z-index: 1
+        overflow: hidden
 
         &.active
           position: absolute
@@ -521,14 +518,32 @@ body
     font-family: 'Catamaran', sans-serif
     display: flex
     justify-content: center
-    margin-top: 50px
+    margin-top: 80px
 
     .pagination
       border: 1px solid black
+      visibility: hidden
+
+      &.active
+        visibility: visible
+
+      &:hover
+        cursor: pointer
+
+      // .page
+      //   transition: 0.3s all
+      //   &.active
+      //     background: black
+      //     color: white
 
       a
         color: black
         border: none
+        transition: 0.7s all
+
+        &.active
+          background: black
+          color: white
 
 
 
