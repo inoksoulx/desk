@@ -3,37 +3,39 @@ function pagination() {
   var section = $('.product_container');
   var listItems = [];
 
-  if (items.length > 12 ) {
-    for (var i = 0; i < items.length; i++) {
-      var part = items.splice(0, 12);
-      listItems.push(part);
-    }
+  for (var i = 0; i < items.length; i++) {
+    var part = items.splice(0, 12);
+    listItems.push(part);
+  }
 
-    var lostPart = [];
-    for (var i = 0; i < items.length; i++) {
-      if(!Array.isArray(items[i])){
-        lostPart.push(items[i]);
+  var lostPart = [];
+  for (var i = 0; i < items.length; i++) {
+    if(!Array.isArray(items[i])){
+      lostPart.push(items[i]);
+    }
+  }
+
+  if (lostPart.length !== 0) {
+    listItems.push(lostPart);
+  }
+
+  if ($('.work-belt').children().length > 12 ) {
+
+    if ($('.page').length == 0) {
+      for (var i = 0; i < listItems.length; i++) {
+        var li = document.createElement('li');
+        li.classList.add('page');
+
+        var a = document.createElement('a');
+
+        a.innerHTML = i + 1;
+
+        li.append(a);
+
+        $('.next').before(li);
       }
     }
 
-    if (lostPart.length !== 0) {
-      listItems.push(lostPart);
-    }
-
-    console.log(listItems);
-
-    for (var i = 0; i < listItems.length; i++) {
-      var li = document.createElement('li');
-      li.classList.add('page');
-
-      var a = document.createElement('a');
-
-      a.innerHTML = i + 1;
-
-      li.append(a);
-
-      $('.next').before(li);
-    }
 
     listItems.splice(0, 1);
 
@@ -60,11 +62,14 @@ function pagination() {
 
   } else {
     $('.pagination').removeClass('active');
-    console.log(listItems);
   }
 
-  $('.page > a').eq(0).addClass('active');
-  $('.page > a').eq($('.page > a').length / 2).addClass('active');
+  if (!$('.page > a').hasClass('active')
+    && !$('.page > a').eq($('.page > a').length / 2).hasClass('active')) {
+      $('.page > a').eq(0).addClass('active');
+      $('.page > a').eq($('.page > a').length / 2).addClass('active');
+  }
+
 
   currentPage = 1;
 

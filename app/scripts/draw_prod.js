@@ -25,9 +25,11 @@ function drawProd(prod, type){
         typeProd = i.type,
         token = i.token;
 
+
     div = document.createElement('div');
     div.classList.add('product');
     div.setAttribute('token', token);
+    div.setAttribute('type', typeProd);
 
     divInfo = document.createElement('div');
     divInfo.classList.add('product_info');

@@ -30,6 +30,7 @@ function openDesc() {
       case 'fa fa-trash-o':
         var thisToken = this.getAttribute('token');
         var prodList = JSON.parse(localStorage.prodDB);
+        var type = this.getAttribute('type');
 
         var filteredProd = prodList.items.filter(function(obj) {
           var iToken = obj.token;
@@ -40,9 +41,26 @@ function openDesc() {
           }
         })
 
-        this.remove();
+        $(this).fadeOut().remove();
+
         prodList.items = filteredProd;
+        products = prodList;
         localStorage.setItem('prodDB', JSON.stringify(prodList));
+
+        $('div.product').remove();
+
+        if ($('.product_container').children().length > 1) {
+          $('.work-belt ~').remove();
+        }
+
+        if ($('.page')){
+          $('.page').remove();
+        }
+
+        $('.product_container').css('left', '0');
+
+        drawProd(prodList.items, type);
+        fadeProd();
         pagination();
 
     }
@@ -92,7 +110,7 @@ function fadeProd() {
   $('.product').each(function(i) {
     setTimeout(function() {
       $('.product').eq(i).addClass('is-visible');
-    }, 100 * i);
+    }, 10 * i);
   });
 }
 
