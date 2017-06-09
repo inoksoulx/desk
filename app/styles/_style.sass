@@ -158,6 +158,146 @@ body
       &:hover
         cursor: pointer
 
+.pop_up_edit
+  width: 100%
+  height: 2000px
+  background-color: rgba(0,0,0,0.5)
+  overflow: hidden
+  position: fixed
+  top: 0px
+  font-family: 'Catamaran', sans-serif
+  z-index: 100000
+  opacity: 0
+  visibility: hidden
+  transition: visibility 0s, opacity 0.3s linear
+
+.pop_up_edit.active
+  opacity: 1
+  visibility: visible
+
+  .pop_up-container
+    position: relative
+    margin: 40px auto 0px auto
+    width: 550px
+    padding: 10px
+    background-color: rgba(161, 161, 161, 1)
+    border-radius: 5px
+    box-shadow: 0px 0px 10px #000
+
+    form
+      margin: 20px auto
+      width: 250px
+      display: flex
+      flex-direction: column
+      align-items: center
+
+      label
+        margin-top: 5px
+        height: 15px
+
+      textarea
+        margin-top: 5px
+
+      input
+        margin-top: 5px
+
+        &[type="submit"]
+          background-color: rgba(161, 161, 161, 1)
+          width: 150px
+          height: 40px
+          border-radius: 25px
+          border: 1px solid rgba(161, 161, 161, 1)
+          outline: none
+          transition: 0.4s all
+          line-height: 40px
+          margin-top: 15px
+          border: 1px solid rgba(0, 0, 0, 0.73)
+
+          &:hover
+            color: white
+
+        &[type="text"]
+          width: 200px
+
+
+    i
+      position: absolute
+      top: 5px
+      right: 5px
+
+      &:hover
+        cursor: pointer
+
+.pop_up_add
+  width: 100%
+  height: 2000px
+  background-color: rgba(0,0,0,0.5)
+  overflow: hidden
+  position: fixed
+  top: 0px
+  font-family: 'Catamaran', sans-serif
+  z-index: 100000
+  opacity: 0
+  visibility: hidden
+  transition: visibility 0s, opacity 0.3s linear
+
+.pop_up_add.active
+  opacity: 1
+  visibility: visible
+
+  .pop_up-container
+    position: relative
+    margin: 40px auto 0px auto
+    width: 550px
+    padding: 10px
+    background-color: rgba(161, 161, 161, 1)
+    border-radius: 5px
+    box-shadow: 0px 0px 10px #000
+
+    form
+      margin: 20px auto
+      width: 250px
+      display: flex
+      flex-direction: column
+      align-items: center
+
+      label
+        margin-top: 5px
+        height: 15px
+
+      textarea
+        margin-top: 5px
+
+      input
+        margin-top: 5px
+
+        &[type="submit"]
+          background-color: rgba(161, 161, 161, 1)
+          width: 150px
+          height: 40px
+          border-radius: 25px
+          border: 1px solid rgba(161, 161, 161, 1)
+          outline: none
+          transition: 0.4s all
+          line-height: 40px
+          margin-top: 15px
+          border: 1px solid rgba(0, 0, 0, 0.73)
+
+          &:hover
+            color: white
+
+        &[type="text"]
+          width: 200px
+
+
+    i
+      position: absolute
+      top: 5px
+      right: 5px
+
+      &:hover
+        cursor: pointer
+
 .wrapper
   header
     font-family: 'Catamaran', sans-serif
@@ -197,6 +337,36 @@ body
       height: 50px
       padding: 10px
       line-height: 22px
+      text-align: center
+      opacity: 0
+      margin-left: 20px
+      margin-right: 10px
+      background-color: inherit
+      visibility: hidden
+      transition: visibility 0s, opacity 0.3s linear, letter-spacing 0.3s, color 0.3s, transform 0.2s
+      color: rgba(252, 252, 252, 0.73)
+      border: none
+
+
+      &.active
+        opacity: 1
+        visibility: visible
+        border-bottom: 2px solid rgba(252, 252, 252, 0.73)
+        border-top: 2px solid rgba(252, 252, 252, 0.73)
+
+      &:hover
+        border: none
+        letter-spacing: 1.2px
+        color: white
+        transform: scale(1.1)
+
+    .add_product
+      position: absolute
+      width: 150px
+      left: 120px
+      height: 50px
+      padding: 10px
+      line-height: 15px
       text-align: center
       opacity: 0
       margin-left: 20px
@@ -395,9 +565,12 @@ body
         top: 8px
         left: 6px
         transition: 0.3s all
+  .pag
+    display: flex
+    justify-content: center
 
   section
-    margin-top: -30px
+    margin-top: -40px
     position: relative
     font-family: 'Catamaran', sans-serif
     @include clearfix
@@ -459,6 +632,7 @@ body
         line-height: 30px
         background: rgba(#0a0a0a, 0.7)
 
+
         .product_date
           float: right
           margin-right: 10px
@@ -467,19 +641,17 @@ body
           float: left
           margin-left: 10px
 
-      i
+      .edit
+        // background: rgba(0, 0, 0, 0.92)
         position: absolute
-        color: white
-        font-size: 18px
+        top: 9.5
+        right: 252px
+        z-index: 2
 
-        &.fa-pencil-square-o
-          right: 270px
-          top: 10px
-
-        &.fa-trash-o
-          right: 248px
-          top: 9px
-
+        i
+          color: white
+          font-size: 18px
+          padding: 5.5px
 
       .product_desc
         color: white
@@ -495,6 +667,7 @@ body
         top: 400px
         z-index: 1
         overflow: hidden
+        width: 550px
 
         &.active
           position: absolute
@@ -524,30 +697,26 @@ body
     justify-content: center
     margin-top: 80px
 
-    .pagination
-      border: 1px solid black
-      visibility: hidden
+
+.pagination
+  border: 1px solid black
+  visibility: hidden
+
+  &.active
+    visibility: visible
+
+  &:hover
+    cursor: pointer
+
+  li
+    a
+      color: black
+      border: none
+      transition: 0.7s all
 
       &.active
-        visibility: visible
-
-      &:hover
-        cursor: pointer
-
-      // .page
-      //   transition: 0.3s all
-      //   &.active
-      //     background: black
-      //     color: white
-
-      a
-        color: black
-        border: none
-        transition: 0.7s all
-
-        &.active
-          background: black
-          color: white
+        background: black
+        color: white
 
 
 

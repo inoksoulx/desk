@@ -1,9 +1,9 @@
 function pagination() {
   var items = $('.work-belt').children();
   var section = $('.product_container');
+  var listItems = [];
 
   if (items.length > 12 ) {
-    var listItems = [];
     for (var i = 0; i < items.length; i++) {
       var part = items.splice(0, 12);
       listItems.push(part);
@@ -19,6 +19,8 @@ function pagination() {
     if (lostPart.length !== 0) {
       listItems.push(lostPart);
     }
+
+    console.log(listItems);
 
     for (var i = 0; i < listItems.length; i++) {
       var li = document.createElement('li');
@@ -58,9 +60,11 @@ function pagination() {
 
   } else {
     $('.pagination').removeClass('active');
+    console.log(listItems);
   }
 
   $('.page > a').eq(0).addClass('active');
+  $('.page > a').eq($('.page > a').length / 2).addClass('active');
 
   currentPage = 1;
 

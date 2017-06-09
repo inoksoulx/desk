@@ -1,13 +1,96 @@
-function openDesc(){
-  $('.product').on('click', function(){
-  var desc = $(this).find('div.product_desc');
-  desc.toggleClass('active');
-})
+function openDesc() {
+  openDesc.el;
+  $('.product').on('click', function(e) {
+    var desc = $(this).find('div.product_desc');
+
+    switch (e.target.className) {
+      case 'product_image':
+        desc.addClass('active');
+        break;
+
+      case 'product_description':
+        desc.addClass('active');
+        break;
+
+      case 'product_desc active':
+        desc.removeClass('active');
+        break;
+
+      case 'fa fa-pencil-square-o':
+        $('.pop_up_edit').addClass('active');
+
+        var img = this.childNodes[0];
+        var price = this.childNodes[1].childNodes[0];
+        var description = this.childNodes[2].childNodes[0];
+
+        $('textarea').val(description.innerText);
+        $('#edit_price').val(price.innerText.substring(6));
+        break;
+
+      case 'fa fa-trash-o':
+        var thisToken = this.getAttribute('token');
+        var prodList = JSON.parse(localStorage.prodDB);
+
+        var filteredProd = prodList.items.filter(function(obj) {
+          var iToken = obj.token;
+          if (+thisToken !== iToken) {
+            return true;
+          } else {
+            return false;
+          }
+        })
+
+        this.remove();
+        prodList.items = filteredProd;
+        localStorage.setItem('prodDB', JSON.stringify(prodList));
+        pagination();
+
+    }
+    openDesc.el = this;
+  })
+
+  return function() {
+
+    var element = openDesc.el;
+    var imgFile = $('#edit_image_file').val();
+    var imgUrl = $('#edit_image_input').val();
+    var replaceImg = imgFile.replace('C:\\fakepath', 'img');
+    var token = element.getAttribute('token');
+
+    var img = element.childNodes[0];
+    var price = element.childNodes[1].childNodes[0];
+    var description = element.childNodes[2].childNodes[0];
+
+    price.innerText = 'Price: ' + $('#edit_price').val();
+    description.innerText = $('#edit_description').val();
+
+    if (imgFile.length !== 0 && imgUrl.length === 0) {
+      img.src = replaceImg;
+    } else if (imgFile.length !== 0 && imgUrl.length !== 0) {
+      alert('Select one image option please.')
+    } else if (imgFile.length === 0 && imgUrl.length !== 0) {
+      img.src = imgUrl;
+    }
+
+    products.items.forEach(function(i) {
+      var iToken = i.token;
+      if (+token === iToken) {
+        for (var variable in i) {
+          if (i.hasOwnProperty(variable)) {
+            i.description = description.innerText;
+            i.price = price.innerText.substring(7);
+            i.img = img.src;
+          }
+        }
+      }
+    })
+    localStorage.setItem('prodDB', JSON.stringify(products));
+  }
 }
 
 function fadeProd() {
-  $('.product').each(function(i){
-    setTimeout(function(){
+  $('.product').each(function(i) {
+    setTimeout(function() {
       $('.product').eq(i).addClass('is-visible');
     }, 100 * i);
   });
@@ -18,91 +101,6 @@ var matches = document.cookie.match(new RegExp(
 ));
 var user = matches ? decodeURIComponent(matches[1]) : undefined;
 
-$.getJSON("scripts/product.json", function(res) {
-
-  var container = $('.work-belt'),
-      item = res.items,
-      div,
-      img,
-      spanDes,
-      spanAuthor,
-      spanPrice,
-      spanDate,
-      divI,
-      iEdit,
-      iTrash,
-      divInfo,
-      divDesc;
-
-
-  item.forEach(function(i) {
-    var imgSrc = i.img,
-        description = i.description,
-        date = i.date,
-        who = i.author,
-        price = i.price,
-        moderated = i.moderated;
-
-    div = document.createElement('div');
-    div.classList.add('product');
-
-    divInfo = document.createElement('div');
-    divInfo.classList.add('product_info');
-
-    divDesc = document.createElement('div');
-    divDesc.classList.add('product_desc');
-
-    divI = document.createElement('div');
-
-    iEdit = document.createElement('i');
-    iEdit.classList.add('fa', 'fa-pencil-square-o');
-
-    iTrash = document.createElement('i');
-    iTrash.classList.add('fa', 'fa-trash-o');
-
-    img = document.createElement('img');
-    img.src = imgSrc;
-
-    spanDes = document.createElement('span');
-    spanDes.classList.add('product_description');
-    spanDes.innerText = description;
-
-    spanAuthor = document.createElement('span');
-    spanAuthor.classList.add('product_author');
-    spanAuthor.innerText = 'Author: ' + who;
-
-    spanPrice = document.createElement('span');
-    spanPrice.classList.add('product_price');
-    spanPrice.innerText = 'Price: ' + price;
-
-    spanDate = document.createElement('span');
-    spanDate.classList.add('product_date');
-    spanDate.innerText = 'Date: ' + date;
-
-    divI.append(iEdit, iTrash);
-    divInfo.append(spanPrice, spanDate);
-    divDesc.append(spanDes, spanAuthor);
-
-    if (moderated === 'true') {
-      if( user === who ){
-        div.append(img, divInfo, divDesc, divI);
-        container.append(div);
-      } else {
-        div.append(img, divInfo, divDesc);
-        container.append(div);
-      }
-    }
-  })
-  openDesc();
-  pagination();
-  $('.product').css('opacity', '1');
-  $('.product_container').css('left', '0%');
-  $('.page > a').eq(0).addClass('active');
-
-})
-
-
-
 if (user) {
 
   let wel = $('.login');
@@ -110,6 +108,8 @@ if (user) {
 
   wel.addClass('active').text('Welcome ' + user);
   signOut.addClass('active');
+
+  $('.add_product').addClass('active');
 
   window.location.hash = user;
 
@@ -188,7 +188,7 @@ $('#sign_in_form').on('submit', (event) => {
 
 })
 
-$('.sign_out').on('click', function(event){
+$('.sign_out').on('click', function(event) {
 
   let wel = $('.login');
   let signIn = $('.sign_in');
@@ -199,10 +199,49 @@ $('.sign_out').on('click', function(event){
   signUp.addClass('active');
   signIn.addClass('active');
 
+  $('.add_product').removeClass('active');
+
   deleteCookie('userName');
   $('.product').find('i').remove();
 
-  window.location.hash = '';
+
+  window.location.reload();
+  window.location.href = 'http://localhost:9000';
   event.preventDefault();
 
 })
+
+
+
+if (!localStorage.prodDB) {
+  var prod;
+  $.getJSON("scripts/product.json", function(res) {
+
+    var item = res.items;
+    item.forEach(function(e, i) {
+      e.token = Date.now() + i;
+    })
+    prod = res;
+    localStorage.setItem('prodDB', JSON.stringify(prod));
+  })
+
+
+  drawProd();
+  openDesc();
+  pagination();
+
+  $('.product').css('opacity', '1');
+  $('.product_container').css('left', '0%');
+  $('.page > a').eq(0).addClass('active');
+
+} else {
+  var products = JSON.parse(localStorage.prodDB);
+
+  drawProd();
+  openDesc();
+  pagination();
+
+  $('.product').css('opacity', '1');
+  $('.product_container').css('left', '0%');
+  $('.page > a').eq(0).addClass('active');
+}

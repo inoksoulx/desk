@@ -38,63 +38,120 @@
     <div class="pop_up-container">
       <form action="" id="sign_up_form">
         <label for="email">E-mail</label>
-        <input type="email" name="email" placeholder="exmaple@mail.com" id="sign_up_email" >
+        <input type="email" name="email" placeholder="exmaple@mail.com" id="sign_up_email">
         <label for="password">Password</label>
-        <input type="password" id="sign_up_pass" name="" value="" >
+        <input type="password" id="sign_up_pass" name="" value="">
         <div class="g-recaptcha" data-sitekey="6LfPmiIUAAAAADHhGjVaNSqhUthxDY1Hw0sQ3JtG"></div>
         <input type="submit" id="submit" name="" value="Sign up">
       </form>
       <i class="fa fa-times fa-lg" id="close_popup_up" aria-hidden="true"></i>
     </div>
   </div>
+  <div class="pop_up_edit">
+    <div class="pop_up-container">
+      <form action="#" id="edit_form">
+        <label for="image">Image</label>
+        <input type="file" id="edit_image_file" name="image">
+        <input type="text" id="edit_image_input" name="image" placeholder="Or URL.">
+        <label for="description">Description</label>
+        <textarea name="description" id="edit_description" rows="8" cols="80"></textarea>
+        <label for="price">Price</label>
+        <input type="text" id="edit_price" name="price" value="">
+        <input type="submit" id="edit_button" name="" value="Edit">
+      </form>
+      <i class="fa fa-times fa-lg" id="close_popup_edit" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="pop_up_add">
+    <div class="pop_up-container">
+      <form action="#" id="add_form">
+        <label for="image">Image</label>
+        <input type="file" id="add_image_file" name="image">
+        <input type="text" id="add_image_input" name="image" placeholder="Or URL.">
+        <label for="description">Description</label>
+        <textarea name="description" id="add_description" rows="8" cols="80"></textarea>
+        <label for="price">Price</label>
+        <input type="text" id="add_price" name="price" value="">
+        <label for="category">Select category</label>
+        <select size="1" name="category" id="add_category">
+          <option disabled>Select category</option>
+          <option value="cars">Cars</option>
+          <option value="clothes">Clothes</option>
+          <option value="flats">Flats</option>
+          <option value="devices">Devices</option>
+          <option value="accessories">Accessories</option>
+          <option value="appliances">Appliances</option>
+        </select>
+        <input type="submit" id="add_button" name="" value="Edit">
+      </form>
+      <i class="fa fa-times fa-lg" id="close_popup_add" aria-hidden="true"></i>
+    </div>
+  </div>
 
+  <div class="wrapper">
+    <header>
+      <div class="login"></div>
+      <button class="sign_out">Sign out</button>
+      <button class="add_product">Add new advertisement</button>
+      <button class="sign_in">Sign in</button>
+      <button class="sign_up">Sign up</button>
+    </header>
     <div class="wrapper">
-      <header>
-        <div class="login"></div>
-        <button class="sign_out">Sign out</button>
-        <button class="sign_in">Sign in</button>
-        <button class="sign_up">Sign up</button>
-      </header>
-      <div class="wrapper">
-        <nav class="list_category">
-          <button class="category">Cars</button>
-          <span>/</span>
-          <button class="category">Clothes</button>
-          <span>/</span>
-          <button class="category">Flats</button>
-          <span>/</span>
-          <button class="category">Devices</button>
-          <span>/</span>
-          <button class="category">Accessories</button>
-          <span>/</span>
-          <button class="category">Appliances</button>
-        </nav>
-      </div>
-      <div class="grid_style_container">
-        <button class="grid_option th"></button>
-        <button class="grid_option th-large"></button>
-        <button class="grid_option line"></button>
-      </div>
-      <section class="product_container">
-        <div class="work-belt"></div>
-      </section>
-      <footer>
-        <nav>
-          <ul class="pagination">
-            <li class="prev">
-              <a href="" >
+      <nav class="list_category">
+        <button class="category">Cars</button>
+        <span>/</span>
+        <button class="category">Clothes</button>
+        <span>/</span>
+        <button class="category">Flats</button>
+        <span>/</span>
+        <button class="category">Devices</button>
+        <span>/</span>
+        <button class="category">Accessories</button>
+        <span>/</span>
+        <button class="category">Appliances</button>
+      </nav>
+    </div>
+    <div class="grid_style_container">
+      <button class="grid_option th"></button>
+      <button class="grid_option th-large"></button>
+      <button class="grid_option line"></button>
+    </div>
+    <div class="pag">
+      <nav>
+        <ul class="pagination">
+          <li class="prev">
+            <a href="">
                   &laquo;
               </a>
-            </li>
-            <li class="next">
-              <a href="">
+          </li>
+          <li class="next">
+            <a href="">
                 &raquo;
               </a>
-            </li>
-          </ul>
-        </nav>
-      </footer>
+          </li>
+        </ul>
+      </nav>
     </div>
+    <section class="product_container">
+      <div class="work-belt"></div>
+    </section>
+    <footer>
+      <nav>
+        <ul class="pagination">
+          <li class="prev">
+            <a href="">
+                  &laquo;
+              </a>
+          </li>
+          <li class="next">
+            <a href="">
+                &raquo;
+              </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -134,13 +191,15 @@
 
   <!-- build:js scripts/main.js -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
-
+  <script src="scripts/draw_prod.js"></script>
   <script src="scripts/DB.js"></script>
+  <script src="scripts/UI.js"></script>
+  <script src="scripts/pagination.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/register.js"></script>
-  <script src="scripts/pagination.js"></script>
   <script src="scripts/product_request.js"></script>
-  <script src="scripts/UI.js"></script>
+  <script src="scripts/edit-add_product.js"></script>
 
 </body>
+
 </html>

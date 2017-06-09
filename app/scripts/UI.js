@@ -4,11 +4,12 @@ var currentPage = 1;
 var flag = false;
 
 pages.on('click', function(event){
-
+  event.preventDefault();
   var a = $('.page > a');
   var target = event.target;
+  console.log(a);
 
-  var listItems = $('.page').length;
+  var listItems = $('.page').length / 2;
   switch (target.parentNode.className) {
 
     case 'prev':
@@ -28,16 +29,17 @@ pages.on('click', function(event){
       break;
 
     case 'next':
-      if (Math.round(parseFloat($('.product_container').get(0).style.left)) !== Math.round((listItems - 1) * 100 * -1)) {
+      if (Math.round(parseFloat($('.product_container').get(0).style.left)) !==
+          Math.round((listItems - 1) * 100 * -1)) {
         if( flag ) return false;
         flag = true;
         $('.product_container').animate({
           left: '-=100%'
-        }, 700, function(){
+        }, 500, function(){
           flag = false;
         });
       }
-      if (currentPage !== listItems) {
+      if (currentPage !== listItems ) {
         currentPage += 1;
       }
       checkPage(a)
@@ -62,14 +64,12 @@ pages.on('click', function(event){
     default:
 
   }
-
-  event.preventDefault();
 })
 
 function checkPage(a){
+  $('.pagination li > a').removeClass('active');
   for (var i = 0; i < a.length; i++) {
     if (+a[i].innerHTML == currentPage) {
-      a.removeClass('active');
       a[i].className = 'active';
     }
   }

@@ -729,7 +729,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "undefined",
    "type": "devices"
   }
   ]
