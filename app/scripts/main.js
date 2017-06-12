@@ -63,6 +63,25 @@ function openDesc() {
         fadeProd();
         pagination();
 
+      case 'fa fa-check':
+
+        var token = this.getAttribute('token');
+
+        products.items.forEach(function(i) {
+          var iToken = i.token;
+          if (+token === iToken) {
+            for (var variable in i) {
+              if (i.hasOwnProperty(variable)) {
+                i.moderated = 'true';
+              }
+            }
+          }
+        })
+
+        this.childNodes[1].style.border = '2px solid rgb(110, 240, 153)';
+        localStorage.setItem('prodDB', JSON.stringify(products));
+
+        break;
     }
     openDesc.el = this;
   })
@@ -229,9 +248,7 @@ $('.sign_out').on('click', function(event) {
 
 })
 
-
-
-if (!localStorage.prodDB) {
+if (localStorage.prodDB === undefined) {
   var prod;
   $.getJSON("scripts/product.json", function(res) {
 
@@ -240,22 +257,22 @@ if (!localStorage.prodDB) {
       e.token = Date.now() + i;
     })
     prod = res;
+    console.log(res);
     localStorage.setItem('prodDB', JSON.stringify(prod));
   })
 
-
-  drawProd();
+  drawProd(prod, false);
   openDesc();
   pagination();
 
   $('.product').css('opacity', '1');
   $('.product_container').css('left', '0%');
   $('.page > a').eq(0).addClass('active');
-
+  console.log(12);
 } else {
   var products = JSON.parse(localStorage.prodDB);
 
-  drawProd();
+  drawProd(null, false);
   openDesc();
   pagination();
 

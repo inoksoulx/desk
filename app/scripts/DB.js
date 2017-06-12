@@ -13,6 +13,10 @@ class DB {
         {
           email: 'jack@gmail.com',
           password: '12345678'
+        },
+        {
+          email: 'admin@gmail.com',
+          password: '12345678'
         }
       ]
     }

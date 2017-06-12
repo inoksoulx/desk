@@ -1,3 +1,5 @@
+
+
 function drawProd(prod, type){
 
   var container = $('.work-belt'),
@@ -13,7 +15,8 @@ function drawProd(prod, type){
       iEdit,
       iTrash,
       divInfo,
-      divDesc;
+      divDesc,
+      iMod;
 
   item.forEach(function(i) {
     var imgSrc = i.img,
@@ -46,6 +49,9 @@ function drawProd(prod, type){
     iTrash = document.createElement('i');
     iTrash.classList.add('fa', 'fa-trash-o');
 
+    iMod = document.createElement('i');
+    iMod.classList.add('fa', 'fa-check');
+
     img = document.createElement('img');
     img.classList.add('product_image');
     img.src = imgSrc;
@@ -71,7 +77,7 @@ function drawProd(prod, type){
     divDesc.append(spanDes, spanAuthor);
 
 
-      if (moderated === 'true' && typeProd === type) {
+      if (moderated === 'true' && typeProd === type && user !== 'admin@gmail.com') {
           if( user === who ){
             div.append(img, divInfo, divDesc, divI);
             container.append(div);
@@ -79,13 +85,23 @@ function drawProd(prod, type){
             div.append(img, divInfo, divDesc);
             container.append(div);
           }
-      } else if(moderated === 'true' && false === type) {
+      } else if(moderated === 'true' && type === false && user !== 'admin@gmail.com') {
         if( user === who ){
           div.append(img, divInfo, divDesc, divI);
           container.append(div);
         } else {
           div.append(img, divInfo, divDesc);
           container.append(div);
+        }
+      } else {
+        if (user === 'admin@gmail.com' && type === false && moderated !== 'true' ) {
+          div.append(img, divInfo, divDesc, divI, iMod);
+          container.append(div);
+          divInfo.style.border = '2px solid rgb(245, 97, 97)'
+        } else if(user === 'admin@gmail.com' && type === typeProd && moderated !== 'true'){
+          div.append(img, divInfo, divDesc, divI, iMod);
+          container.append(div);
+          divInfo.style.border = '2px solid rgb(245, 97, 97)'
         }
       }
 

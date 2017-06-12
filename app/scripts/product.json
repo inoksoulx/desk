@@ -666,7 +666,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "false",
    "type": "devices"
   },
   {
@@ -675,7 +675,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "false",
    "type": "devices"
   },
   {
@@ -684,7 +684,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "false",
    "type": "acc"
   },
   {
@@ -693,7 +693,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "false",
    "type": "devices"
   },
   {
@@ -702,7 +702,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "false",
    "type": "devices"
   },
   {
@@ -711,7 +711,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "false",
    "type": "devices"
   },
   {
@@ -720,7 +720,7 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "true",
+   "moderated": "false",
    "type": "devices"
   },
   {
@@ -729,7 +729,133 @@
    "date": "16.08.2017",
    "author": "eric@gmail.com",
    "price": "1000",
-   "moderated": "undefined",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
+   "type": "devices"
+  },
+  {
+   "img": "https://c1.staticflickr.com/5/4034/4670707594_3f4a3c0d03.jpg",
+   "description": "Lorem ipsum dolor sit amet, sagittis consectetur cursus, repudiandae leo, metus in lacus. Phasellus nibh ut. Integer porttitor. Suscipit nec, vitae ac vestibulum. Nibh feugiat vulputate, sunt tincidunt. Ante sit phasellus, eu cras, duis gravida dolor.",
+   "date": "16.08.2017",
+   "author": "eric@gmail.com",
+   "price": "1000",
+   "moderated": "false",
    "type": "devices"
   }
   ]
