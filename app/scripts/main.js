@@ -2,21 +2,21 @@ function openDesc() {
   openDesc.el;
   $('.product').on('click', function(e) {
     var desc = $(this).find('div.product_desc');
-
-    switch (e.target.className) {
-      case 'product_image':
+    console.log(e.target.id);
+    switch (e.target.id) {
+      case 'image':
         desc.addClass('active');
         break;
 
-      case 'product_description':
+      case 'el_desc':
         desc.addClass('active');
         break;
 
-      case 'product_desc active':
+      case 'desc':
         desc.removeClass('active');
         break;
 
-      case 'fa fa-pencil-square-o':
+      case 'edit_icon':
         $('.pop_up_edit').addClass('active');
 
         var img = this.childNodes[0];
@@ -27,7 +27,7 @@ function openDesc() {
         $('#edit_price').val(price.innerText.substring(6));
         break;
 
-      case 'fa fa-trash-o':
+      case 'remove_icon':
         var thisToken = this.getAttribute('token');
         var prodList = JSON.parse(localStorage.prodDB);
         var type = this.getAttribute('type');
@@ -41,29 +41,16 @@ function openDesc() {
           }
         })
 
-        $(this).fadeOut().remove();
-
         prodList.items = filteredProd;
         products = prodList;
         localStorage.setItem('prodDB', JSON.stringify(prodList));
 
-        $('div.product').remove();
+        this.style.opacity = 0;
+        $(this).remove();
+        window.location.reload();
+        break;
 
-        if ($('.product_container').children().length > 1) {
-          $('.work-belt ~').remove();
-        }
-
-        if ($('.page')){
-          $('.page').remove();
-        }
-
-        $('.product_container').css('left', '0');
-
-        drawProd(prodList.items, type);
-        fadeProd();
-        pagination();
-
-      case 'fa fa-check':
+      case 'mod_icon':
 
         var token = this.getAttribute('token');
 
@@ -198,7 +185,7 @@ function deleteCookie(name) {
 
 }
 
-$('#sign_in_form').on('submit', (event) => {
+$('#submit_log').on('click', (event) => {
 
   let email = $('#sign_in_email').val();
   let pass = $('#sign_in_pass').val();
@@ -213,7 +200,7 @@ $('#sign_in_form').on('submit', (event) => {
     setCookie('userName', email, {
       expires: 3600
     })
-    $('.pop_up_sign-in').removeClass('active');
+    $('.pop_up_sign').removeClass('active');
 
     window.location.reload();
   } else {
@@ -229,11 +216,11 @@ $('.sign_out').on('click', function(event) {
 
   let wel = $('.login');
   let signIn = $('.sign_in');
-  let signUp = $('.sign_up');
+
 
   $(this).removeClass('active');
   wel.removeClass('active').text(' ');
-  signUp.addClass('active');
+
   signIn.addClass('active');
 
   $('.add_product').removeClass('active');
@@ -243,7 +230,7 @@ $('.sign_out').on('click', function(event) {
 
 
   window.location.reload();
-  window.location.href = 'http://localhost:9000';
+  window.location.href = 'http://localhost:9000/';
   event.preventDefault();
 
 })
@@ -268,7 +255,6 @@ if (localStorage.prodDB === undefined) {
   $('.product').css('opacity', '1');
   $('.product_container').css('left', '0%');
   $('.page > a').eq(0).addClass('active');
-  console.log(12);
 } else {
   var products = JSON.parse(localStorage.prodDB);
 
@@ -280,3 +266,7 @@ if (localStorage.prodDB === undefined) {
   $('.product_container').css('left', '0%');
   $('.page > a').eq(0).addClass('active');
 }
+
+
+
+

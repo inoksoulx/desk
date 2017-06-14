@@ -36,29 +36,37 @@ function drawProd(prod, type){
 
     divInfo = document.createElement('div');
     divInfo.classList.add('product_info');
+    divInfo.id = 'info';
 
     divDesc = document.createElement('div');
     divDesc.classList.add('product_desc');
+    divDesc.id = 'desc';
 
     divI = document.createElement('div');
     divI.classList.add('edit');
+    divI.id = 'edit';
 
     iEdit = document.createElement('i');
     iEdit.classList.add('fa', 'fa-pencil-square-o');
+    iEdit.id = 'edit_icon';
 
     iTrash = document.createElement('i');
     iTrash.classList.add('fa', 'fa-trash-o');
+    iTrash.id = 'remove_icon';
 
     iMod = document.createElement('i');
     iMod.classList.add('fa', 'fa-check');
+    iMod.id = 'mod_icon';
 
     img = document.createElement('img');
     img.classList.add('product_image');
     img.src = imgSrc;
+    img.id = 'image';
 
     spanDes = document.createElement('span');
     spanDes.classList.add('product_description');
     spanDes.innerText = description;
+    spanDes.id = 'el_desc'
 
     spanAuthor = document.createElement('span');
     spanAuthor.classList.add('product_author');

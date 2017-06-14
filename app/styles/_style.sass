@@ -4,7 +4,9 @@
     display: table
     clear: both
 
-
+$width: 600px
+$height: 320px
+$padding: 10px 15px
 
 *
   outline: none
@@ -14,196 +16,94 @@ body
   padding: 0
   overflow-x: hidden
 
-// .input-file-container
-//   position: relative
-//   width: 225px
-//
-// .input-file-trigger
-//   display: block
-//   padding: 14px 45px
-//   background: #39D2B4
-//   color: #fff
-//   font-size: 1em
-//   transition: all .4s
-//   cursor: pointer
-//   text-align: center
-//   line-height: 5px
-// .input-file
-//   position: absolute
-//   top: 0
-//   left: 0
-//   width: 225px
-//   opacity: 0
-//   padding: 14px 0
-//   cursor: pointer
-//   &:hover + .input-file-trigger, &:focus + .input-file-trigger
-//     background: #34495E
-//     color: #39D2B4
-//
-// .input-file-trigger
-//   &:hover, &:focus
-//     background: #34495E
-//     color: #39D2B4
-//
-// .file-return
-//   margin: 0
-//   &:not(:empty)
-//     margin: 1em 0
-//     &:before
-//       content: "Selected file: "
-//       font-style: normal
-//       font-weight: normal
-//   font-style: italic
-//   font-size: .9em
-//   font-weight: bold
-//
-// .input-file-container canvas
-//   max-width: 100%
-//   display: none
+.input-file-container
+  position: relative
+  width: 225px
 
-.pop_up_sign-in
+.input-file-trigger
+  display: block
+  padding: 14px 45px
+  background: #bb93e2
+  box-shadow: 0 0 10px 1px #bb93e2
+  color: #fff
+  font-size: 15px
+  transition: all .4s
+  cursor: pointer
+  text-align: center
+  line-height: 5px
+  border-radius: 3px
+
+.input-file
+  position: absolute
+  top: 0
+  left: 0
+  width: 225px
+  opacity: 0
+  cursor: pointer
+  height: 33px
+
+  &:hover + .input-file-trigger, &:focus + .input-file-trigger
+    // background: #34495E
+    // color: #39D2B4
+
+.input-file-trigger
+  &:hover, &:focus
+    opacity: 0.9
+
+.file-return
+  margin: 0
+  color: black
+  font-family: 'Catamaran', sans-serif
+  &:not(:empty)
+    margin: 1em 0
+    &:before
+      content: "Selected file: "
+      font-style: normal
+      font-weight: normal
+  font-style: italic
+  font-size: .9em
+  font-weight: bold
+
+.input-file-container canvas
+  max-width: 100%
+  max-height: 100%
+  display: none
+  margin: 0 auto
+
+.pop_up_sign
   width: 100%
   height: 2000px
   background-color: rgba(0,0,0,0.5)
   overflow: hidden
   position: fixed
-  top: 0px
+  top: -900px
   font-family: 'Catamaran', sans-serif
   z-index: 100000
   opacity: 0
   visibility: hidden
-  transition: visibility 0s, opacity 0.3s linear
+  transition: visibility 0s, opacity 0.3s linear, top 0.3s
 
-.pop_up_sign-in.active
+.pop_up_sign.active
   opacity: 1
   visibility: visible
-
-  .pop_up-container
-    position: relative
-    margin: 40px auto 0px auto
-    width: 300px
-    height: 200px
-    padding: 10px
-    background-color: rgba(161, 161, 161, 1)
-    border-radius: 5px
-    box-shadow: 0px 0px 10px #000
-
-    form
-      margin: 20px auto
-      width: 250px
-      display: flex
-      flex-direction: column
-      align-items: center
-
-      label
-        height: 15px
-      input
-
-        &[type="submit"]
-          background-color: rgba(161, 161, 161, 1)
-          width: 150px
-          height: 40px
-          border-radius: 25px
-          border: 1px solid rgba(161, 161, 161, 1)
-          outline: none
-          transition: 0.4s all
-          line-height: 40px
-          margin-top: 15px
-          border: 1px solid rgba(0, 0, 0, 0.73)
-
-          &:hover
-            color: white
-
-        &[type="text"]
-          width: 200px
-
-        &[type="password"]
-          width: 200px
-
-    i
-      position: absolute
-      top: 5px
-      right: 5px
-
-      &:hover
-        cursor: pointer
-
-.pop_up_sign-up
-  width: 100%
-  height: 2000px
-  background-color: rgba(0,0,0,0.5)
-  overflow: hidden
-  position: fixed
   top: 0px
-  font-family: 'Catamaran', sans-serif
-  opacity: 0
-  visibility: hidden
-  z-index: 100000
-  transition: visibility 0s, opacity 0.3s linear
-
-.pop_up_sign-up.active
-  visibility: visible
-  opacity: 1
 
   .pop_up-container
     position: relative
-    margin: 40px auto 0px auto
-    width: 300px
-    height: 300px
+    margin: 200px auto 0px auto
+    width: 620px
     padding: 10px
-    background-color: rgba(161, 161, 161, 1)
-    border-radius: 5px
-    box-shadow: 0px 0px 10px #000
 
-    form
-      margin: 20px auto
-      width: 250px
-      display: flex
-      flex-direction: column
-      align-items: center
-
-      label
-        height: 15px
-
-      .g-recaptcha
-        transform: scale(0.8)
-
-      input
-
-        &[type="submit"]
-          background-color: rgba(161, 161, 161, 1)
-          width: 150px
-          height: 40px
-          border-radius: 25px
-          border: 1px solid rgba(161, 161, 161, 1)
-          outline: none
-          transition: 0.4s all
-          line-height: 40px
-          margin-top: 5px
-          border: 1px solid rgba(0, 0, 0, 0.73)
-
-          &:disabled
-            cursor: pointer
-
-          &:hover
-            color: white
-
-        &[type="password"]
-          width: 200px
-          font-size: 18px
-          letter-spacing: 3px
-
-        &[type="email"]
-          width: 200px
-          border: 1px solid rgba(255, 255, 255, 0)
-          transition: border 0.5s
     i
+      color: white
       position: absolute
-      top: 5px
-      right: 5px
+      top: 15px
+      right: 15px
+      transition: 0.3s all
 
       &:hover
         cursor: pointer
+        transform: scale(1.4)
 
 .pop_up_edit
   width: 100%
@@ -211,25 +111,25 @@ body
   background-color: rgba(0,0,0,0.5)
   overflow: hidden
   position: fixed
-  top: 0px
+  top: -900px
   font-family: 'Catamaran', sans-serif
   z-index: 100000
   opacity: 0
   visibility: hidden
-  transition: visibility 0s, opacity 0.3s linear
+  transition: visibility 0s, opacity 0.3s linear, top 0.3s
 
 .pop_up_edit.active
   opacity: 1
   visibility: visible
+  top: 0px
 
   .pop_up-container
     position: relative
     margin: 40px auto 0px auto
-    width: 550px
+    width: 600px
     padding: 10px
-    background-color: rgba(161, 161, 161, 1)
-    border-radius: 5px
-    box-shadow: 0px 0px 10px #000
+    background-color: white
+    box-shadow: 0px 0px 4px 1.3px rgba(255,255,255,1) 
 
     form
       margin: 20px auto
@@ -243,37 +143,48 @@ body
         height: 15px
 
       textarea
-        margin-top: 5px
+        width: 470px
+        border-radius: 3px
+        box-shadow: 0 0 10px 1px #bb93e2
+        border: 1px solid white
+        padding: 7px
 
       input
-        margin-top: 5px
 
         &[type="submit"]
-          background-color: rgba(161, 161, 161, 1)
+          background-color: #bb93e2
           width: 150px
           height: 40px
           border-radius: 25px
-          border: 1px solid rgba(161, 161, 161, 1)
+          border: 1px solid white
+          box-shadow: 0 0 10px 1px #bb93e2
           outline: none
           transition: 0.4s all
           line-height: 40px
           margin-top: 15px
-          border: 1px solid rgba(0, 0, 0, 0.73)
 
           &:hover
             color: white
 
         &[type="text"]
-          width: 200px
+          width: 225px
+          padding: 7px
+          font-size: 14px
+          border-radius: 3px
+          box-shadow: 0 0 10px 1px #bb93e2
+          border: 1px solid white
 
 
     i
       position: absolute
       top: 5px
       right: 5px
+      color: black
+      transition: 0.3s all
 
       &:hover
         cursor: pointer
+        transform: scale(1.4)
 
 .pop_up_add
   width: 100%
@@ -281,25 +192,25 @@ body
   background-color: rgba(0,0,0,0.5)
   overflow: hidden
   position: fixed
-  top: 0px
+  top: -900px
   font-family: 'Catamaran', sans-serif
   z-index: 100000
   opacity: 0
   visibility: hidden
-  transition: visibility 0s, opacity 0.3s linear
+  transition:  top 0.3s , visibility 0s, opacity 0.3s linear
 
 .pop_up_add.active
   opacity: 1
   visibility: visible
+  top: 0px
 
   .pop_up-container
     position: relative
     margin: 40px auto 0px auto
-    width: 550px
+    width: 600px
     padding: 10px
-    background-color: rgba(161, 161, 161, 1)
-    border-radius: 5px
-    box-shadow: 0px 0px 10px #000
+    background-color: white
+    box-shadow: 0px 0px 4px 1.3px rgba(255,255,255,1) 
 
     form
       margin: 20px auto
@@ -308,41 +219,58 @@ body
       flex-direction: column
       align-items: center
 
-      label
-        margin-top: 5px
-        height: 15px
+      span
+        font-weight: bold
 
+      label
+        color: black
+        margin-top: 3px
       textarea
-        margin-top: 5px
+        width: 470px
+        border-radius: 3px
+        box-shadow: 0 0 10px 1px #bb93e2
+        border: 1px solid white
+        padding: 7px
+
+      select
+         width: 225px
+         padding: 7px
 
       input
-        margin-top: 5px
 
         &[type="submit"]
-          background-color: rgba(161, 161, 161, 1)
+          background-color: #bb93e2
           width: 150px
           height: 40px
           border-radius: 25px
-          border: 1px solid rgba(161, 161, 161, 1)
+          border: 1px solid white
+          box-shadow: 0 0 10px 1px #bb93e2
           outline: none
           transition: 0.4s all
           line-height: 40px
           margin-top: 15px
-          border: 1px solid rgba(0, 0, 0, 0.73)
 
           &:hover
             color: white
 
         &[type="text"]
-          width: 200px
+          width: 225px
+          padding: 7px
+          font-size: 14px
+          border-radius: 3px
+          box-shadow: 0 0 10px 1px #bb93e2
+          border: 1px solid white
 
     i
       position: absolute
       top: 5px
       right: 5px
+      color: black
+      transition: 0.3s all
 
       &:hover
         cursor: pointer
+        transform: scale(1.4)
 
 .wrapper
   header
@@ -351,8 +279,8 @@ body
     width: 100%
     height: 50px
     border-bottom: 1px solid black
-    background: rgba(0, 0, 0, 0.9)
-    top: 0
+    background: rgba(0, 0, 0, 0.99)
+    top: 0px
     z-index: 2
 
     .login
@@ -498,6 +426,30 @@ body
       margin-top: 70px
       align-items: center
       justify-content: center
+
+      .back_main
+        width: 150px
+        font-size: 18px
+        text-align: center
+        height: 40px
+        line-height: 40px
+        background-color: inherit
+        transition: 0.3s all
+        font-weight: bold
+        position: relative
+        border: none
+        transition: 0.3s all
+
+        &:hover
+          letter-spacing: 0.3px
+          i
+            left: -20px
+
+        i
+          position: absolute
+          top: 12px
+          left: -10px
+          transition: 0.3s all
 
       .category
         width: 130px

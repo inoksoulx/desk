@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Project</title>
+  <title>Deskk</title>
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -22,29 +22,54 @@
   <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <div class="pop_up_sign-in">
+  <div class="pop_up_sign">
     <div class="pop_up-container">
-      <form action="" id="sign_in_form">
-        <label for="email">E-mail</label>
-        <input type="text" id="sign_in_email" name="" value="" required>
-        <label for="password">Password</label>
-        <input type="password" name="" value="" id="sign_in_pass" required>
-        <input type="submit" name="" value="Sign in">
-      </form>
+      <div class="container">
+        <div class="box">
+          <div class="container-forms">
+            <div class="container-info">
+              <div class="info-item">
+                <div class="table">
+                  <div class="table-cell">
+                    <p>Have an account?</p>
+                    <div class="btn">Log in</div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="table">
+                  <div class="table-cell">
+                    <p>Don't have an account?</p>
+                    <div class="btn">Sign up</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container-form">
+              <div class="form-item log-in">
+                <div class="table">
+                  <div class="table-cell">
+                    <input type="email" name="Username" id="sign_in_email" placeholder="E-mail">
+                    <input type="password" name="Password" id="sign_in_pass" placeholder="Password">
+                    <div class="btn" id="submit_log">Log in</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-item sign-up">
+                <div class="table">
+                  <div class="table-cell">
+                    <input type="email" name="Username" id="sign_up_email" placeholder="E-mail">
+                    <input type="password" name="Password" id="sign_up_pass" placeholder="Password">
+                    <div class="g-recaptcha" data-sitekey="6LfPmiIUAAAAADHhGjVaNSqhUthxDY1Hw0sQ3JtG"></div>
+                    <div class="btn" id="submit">Sign Up</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <i class="fa fa-times fa-lg" id="close_popup_in" aria-hidden="true"></i>
-    </div>
-  </div>
-  <div class="pop_up_sign-up">
-    <div class="pop_up-container">
-      <form action="" id="sign_up_form">
-        <label for="email">E-mail</label>
-        <input type="email" name="email" placeholder="exmaple@mail.com" id="sign_up_email">
-        <label for="password">Password</label>
-        <input type="password" id="sign_up_pass" name="" value="">
-        <div class="g-recaptcha" data-sitekey="6LfPmiIUAAAAADHhGjVaNSqhUthxDY1Hw0sQ3JtG"></div>
-        <input type="submit" id="submit" name="" value="Sign up">
-      </form>
-      <i class="fa fa-times fa-lg" id="close_popup_up" aria-hidden="true"></i>
     </div>
   </div>
   <div class="pop_up_edit">
@@ -52,6 +77,12 @@
       <form action="#" id="edit_form">
         <label for="image">Image</label>
         <input type="file" id="edit_image_file" name="image">
+       <!--<span>Img</span>
+         <div class="input-file-container">
+          <canvas id="imageCanvas"></canvas>
+          <input class="input-file" id="edit_image_file" type="file">
+          <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
+        </div> -->
         <input type="text" id="edit_image_input" name="image" placeholder="Or URL.">
         <label for="description">Description</label>
         <textarea name="description" id="edit_description" rows="8" cols="80"></textarea>
@@ -65,14 +96,14 @@
   <div class="pop_up_add">
     <div class="pop_up-container">
       <form action="#" id="add_form">
-        <label for="image">Image</label>
-        <input type="file" id="add_image_file" name="image">
-
-        <!-- <div class="input-file-container">
+        <!--<label for="image">Image</label>
+        <input type="file" id="add_image_file" name="image">-->
+        <span>Product image</span>
+        <div class="input-file-container">
           <canvas id="imageCanvas"></canvas>
           <input class="input-file" id="add_image_file" type="file">
           <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
-        </div> -->
+        </div> 
         <p class="file-return"></p>
         <input type="text" id="add_image_input" name="image" placeholder="Or URL.">
         <label for="description">Description</label>
@@ -89,7 +120,7 @@
           <option value="accessories">Accessories</option>
           <option value="appliances">Appliances</option>
         </select>
-        <input type="submit" id="add_button" name="" value="Edit">
+        <input type="submit" id="add_button" name="" value="Add advertisement">
       </form>
       <i class="fa fa-times fa-lg" id="close_popup_add" aria-hidden="true"></i>
     </div>
@@ -101,10 +132,11 @@
       <button class="sign_out">Sign out</button>
       <button class="add_product">Add new advertisement</button>
       <button class="sign_in">Sign in</button>
-      <button class="sign_up">Sign up</button>
     </header>
     <div class="wrapper">
       <nav class="list_category">
+        <button class="back_main"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to main</button>
+        <span>/</span>
         <button class="category">Cars</button>
         <span>/</span>
         <button class="category">Clothes</button>
@@ -161,6 +193,7 @@
   </div>
 
 
+
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
     (function(b, o, i, l, e, r) {
@@ -212,3 +245,45 @@
 </body>
 
 </html>
+
+
+
+
+
+  
+  
+    
+      
+        
+          
+  <!--.container
+  .box
+  .container-forms
+    .container-info
+      .info-item
+        .table
+          .table-cell
+            p Have an account?
+            .btn Log in
+      .info-item
+        .table
+          .table-cell
+            p Don't have an account? 
+            .btn Sign up
+    .container-form
+      .form-item.log-in
+        .table
+          .table-cell
+            input type="text" name="Username" placeholder="Username"
+            input type="Password" name="Password" placeholder="Password"
+            .btn Log in
+      .form-item.sign-up
+        .table
+          .table-cell
+            input type="text" name="email" placeholder="Email"
+            input type="text" name="fullName" placeholder="Full Name"
+            input type="text" name="Username" placeholder="Username"
+            input type="Password" name="Password" placeholder="Password"
+            .btn Sign up-->
+
+

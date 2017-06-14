@@ -24,8 +24,6 @@ $("#submit").on('click', function(event) {
     alert("Captcha.")
   }
   else {
-
-
     var nUser = {
       email: email,
       password: password
@@ -33,8 +31,7 @@ $("#submit").on('click', function(event) {
 
     base.setUser(nUser);
 
-
-    $('.pop_up_sign-up').removeClass('active');
+    $('.pop_up_sign').removeClass('active');
 
   }
 });
