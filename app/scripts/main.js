@@ -1,3 +1,7 @@
+function refr(){
+  setTimeout("document.location.reload()", 1000);
+}
+
 function openDesc() {
   openDesc.el;
   $('.product').on('click', function(e) {
@@ -266,7 +270,5 @@ if (localStorage.prodDB === undefined) {
   $('.product_container').css('left', '0%');
   $('.page > a').eq(0).addClass('active');
 }
-
-
 
 

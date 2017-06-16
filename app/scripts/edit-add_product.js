@@ -17,8 +17,7 @@ $('#close_popup_add').on('click', function(e) {
   $('.pop_up_add').removeClass('active');
 });
 
-$('#add_button').on('click', function(e) {
-  e.preventDefault();
+$('#add_form').submit(function(e) {
 
   var newProd = {};
 
@@ -68,10 +67,10 @@ $('#add_button').on('click', function(e) {
     localStorage.setItem('prodDB', JSON.stringify(prodList));
 
     $('.pop_up_add').removeClass('active');
-    window.location.reload();
+
+    
+    refr();   
   }
 
-
   
-
 })

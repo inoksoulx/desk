@@ -95,13 +95,13 @@
   </div>
   <div class="pop_up_add">
     <div class="pop_up-container">
-      <form action="#" id="add_form">
+      <form action="/upload" id="add_form" method="post" enctype="multipart/form-data" name="addForm">
         <!--<label for="image">Image</label>
         <input type="file" id="add_image_file" name="image">-->
         <span>Product image</span>
         <div class="input-file-container">
           <canvas id="imageCanvas"></canvas>
-          <input class="input-file" id="add_image_file" type="file">
+          <input class="input-file" id="add_image_file" type="file" name="Photo">
           <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
         </div> 
         <p class="file-return"></p>
@@ -228,7 +228,7 @@
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/jquery.form/4.2.1/jquery.form.min.js"></script>
   <!-- build:js scripts/main.js -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
 
